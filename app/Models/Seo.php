@@ -198,7 +198,6 @@ class Seo extends PublicModel
             Article::find($news['id'])->update([
                 'name' => $title,
                 'content' => $content,
-                'category_1' => 4,
                 'seo_title' => $title,
                 'seo_keywords' => $kw ? $kw : '励志语录',
                 'seo_describe' => $desc ? $desc : mb_substr($origin_content, 0, 80),
