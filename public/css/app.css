@@ -1,0 +1,128 @@
+/* 头部开始 */
+
+.app-content .app-card .thumb-container{
+    height: 160px;
+    width: 160px;
+    margin-left: 20px;
+    padding-top: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    float: left;
+}
+
+.app-content .app-card .code-container{
+    height: 160px;
+    width: 200px;
+    padding-top: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+
+.app-content .app-card .code-container img{
+    height: 140px;
+    width: 140px;
+}
+
+.app-content .app-card .code-container span{
+    font-size: 14px;
+    display: block;
+    width: 200px;
+    color: #606266;
+    margin-top: 4px;
+}
+
+.app-content .app-card .thumb-container img{
+    height: 160px;
+    width: 160px;
+    border-radius: 20px;
+}
+
+.app-content .app-card {
+    width: 850px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.app-content .app-card .info-container{
+    display: inline-block;
+    float: left;
+    width: 400px;
+    padding: 30px 10px;
+}
+
+.app-content .app-card .info-container .title span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #303133;
+}
+
+.app-content .app-card .info-container .content{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: 28px;
+}
+
+.app-content .app-card .info-container .content span{
+    font-size: 18px;
+    color: #909399;
+}
+
+.app-content .app-card .info-container .content a{
+    cursor: pointer;
+}
+
+.app-content .app-card .info-container .content a:hover{
+    color: #14b9c8;
+}
+
+.app-content .app-card .info-container .date{
+    font-size: 14px;
+    color: #cbd5e0;
+    margin-top: 6px;
+    height: 46px;
+}
+
+.app-content .app-card .info-container .share-container{
+    height: 44px;
+}
+
+.app-main{
+    width: 790px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 20px 30px;
+}
+
+.app-main .app-header{
+    margin-bottom: 20px;
+}
+
+.app-main .app-header span{
+    border-left: 4px solid #14B9C8;
+    padding-left: 8px;
+    font-size: 18px;
+}
+
+.app-main .app-desc{
+    margin-bottom: 20px;
+}
+
+.app-main .app-attaches{
+    height: 520px;
+    width: 790px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.app-main .app-attaches img{
+    height: 500px;
+    width: 230px;
+}
+
+
+
