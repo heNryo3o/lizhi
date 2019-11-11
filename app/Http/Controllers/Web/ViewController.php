@@ -41,7 +41,7 @@ class ViewController extends Controller
 
         for ($i = $request->page; $i <= $end; $i++) {
 
-            $page = QueryList::get('https://www.lz13.cn/lizhi/jingdianyulu-'.$i.'.html')->rules(
+            $page = QueryList::get('https://www.lz13.cn/lizhi/lizhigequ-'.$i.'.html')->rules(
                 [
                     'link' => array('h3>a', 'href'),
                     'title' => array('h3>a', 'text')
@@ -49,6 +49,8 @@ class ViewController extends Controller
             )->queryData();
 
             foreach ($page as $k => $v) {
+
+                Article::where(['url'=>$v['link']])->delete();
 
                 $count = Article::where(['url' => $v['link']])->count();
 

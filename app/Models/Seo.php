@@ -184,9 +184,34 @@ class Seo extends PublicModel
             }
 
             if (!empty($vv['content'])) {
-                $current_content = $this->fakeContent($vv['content']);
-                $content .= '<p>' . $current_content . '</p>';
-                $origin_content .= $current_content;
+                if(mb_strlen($vv['content']) > 1600){
+                    $current_content = $this->fakeContent(mb_substr($vv['content'],0,800));
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                    sleep(1);
+                    $current_content = $this->fakeContent(mb_substr($vv['content'],801,800));
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                    sleep(1);
+                    $current_content = $this->fakeContent(mb_substr($vv['content'],1601,800));
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                    sleep(1);
+                }elseif(mb_strlen($vv['content']) > 800){
+                    $current_content = $this->fakeContent(mb_substr($vv['content'],0,800));
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                    sleep(1);
+                    $current_content = $this->fakeContent(mb_substr($vv['content'],801,800));
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                    sleep(1);
+                }else{
+                    $current_content = $this->fakeContent($vv['content']);
+                    $content .= '<p>' . $current_content . '</p>';
+                    $origin_content .= $current_content;
+                }
+
             }
 
             sleep(1);
