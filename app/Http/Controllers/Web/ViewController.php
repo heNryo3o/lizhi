@@ -37,11 +37,11 @@ class ViewController extends Controller
 
         $i = $request->page;
 
-        $end = $i + 97;
+        $end = $i + 100;
 
         for ($i = $request->page; $i <= $end; $i++) {
 
-            $page = QueryList::get('https://www.lz13.cn/lizhi/lizhimingyan-'.$i.'.html')->rules(
+            $page = QueryList::get('https://www.lz13.cn/lizhi/mingrenmingyan-'.$i.'.html')->rules(
                 [
                     'link' => array('h3>a', 'href'),
                     'title' => array('h3>a', 'text')
@@ -59,7 +59,7 @@ class ViewController extends Controller
                         'status' => 2,
                         'content' => '',
                         'thumb' => 'http://bian-cheng-me.oss-cn-hongkong.aliyuncs.com/public/2019/11/09/jwnmtwADAU5WZeE5AgaGnciRAGr8G6qkpTkh52tc.png',
-                        'category_1' => 1,
+                        'category_1' => 2,
                         'url' => $v['link'],
                         'slug' => ''
                     ];
@@ -83,7 +83,7 @@ class ViewController extends Controller
 
         foreach ($category as $k => &$v) {
 
-            $articles = Article::where(['category_1' => $v['id'], 'status' => 1])->remember(100800)->limit(10)->get()->toArray();
+            $articles = Article::where(['category_1' => $v['id'], 'status' => 1])->remember(100800)->limit(8)->get()->toArray();
 
             $v['articles'] = $articles;
 
@@ -103,7 +103,7 @@ class ViewController extends Controller
 
         $category_info = ArticleCategory::where(['slug' => $request->slug])->remember(100800)->first()->toArray();
 
-        $articles = $articles->where(['category_1' => $category_info['id']])->remember(100800)->orderBy('id', 'desc')->paginate(10);
+        $articles = $articles->where(['category_1' => $category_info['id']])->remember(100800)->orderBy('id', 'desc')->paginate(25);
 
         $links = $articles->links();
 

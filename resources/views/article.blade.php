@@ -23,6 +23,9 @@
                             </a>
                         </p>
                     @endforeach
+                    <div class="pagination-container">
+                        {{ $links }}
+                    </div>
                 </div>
             </div>
         </div>
