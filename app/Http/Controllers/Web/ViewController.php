@@ -41,7 +41,7 @@ class ViewController extends Controller
 
         for ($i = $request->page; $i <= $end; $i++) {
 
-            $page = QueryList::get('https://www.lz13.cn/lizhi/mingrenmingyan-'.$i.'.html')->rules(
+            $page = QueryList::get('https://www.lz13.cn/lizhi/jingdianyulu-'.$i.'.html')->rules(
                 [
                     'link' => array('h3>a', 'href'),
                     'title' => array('h3>a', 'text')
@@ -59,7 +59,7 @@ class ViewController extends Controller
                         'status' => 2,
                         'content' => '',
                         'thumb' => 'http://bian-cheng-me.oss-cn-hongkong.aliyuncs.com/public/2019/11/09/jwnmtwADAU5WZeE5AgaGnciRAGr8G6qkpTkh52tc.png',
-                        'category_1' => 2,
+                        'category_1' => 4,
                         'url' => $v['link'],
                         'slug' => ''
                     ];
