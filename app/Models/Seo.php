@@ -166,7 +166,7 @@ class Seo extends PublicModel
             "kw" => array("meta[name=keywords]", "content"),
             "desc" => array("meta[name=desciption]", "content"),
         ])->queryData();
-dd($data);
+
         $content = $title = $kw = $desc = $origin_content = $current_content = '';
 
         foreach ($data as $vk => $vv) {
