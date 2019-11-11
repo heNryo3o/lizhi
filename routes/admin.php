@@ -18,46 +18,21 @@ Route::post('/login/change-password','LoginController@changePassword');
 
 Route::post('/system/upload','SystemController@upload');
 
-// 应用分类模块
+// 文章分类模块
 
-Route::get('/category/index','CategoryController@index');
-Route::get('/category/options','CategoryController@options');
-Route::get('/category/news-options','CategoryController@newsOptions');
+Route::get('/article-category/index','ArticleCategoryController@index');
 
-Route::post('/category/create','CategoryController@create');
-Route::post('/category/edit','CategoryController@edit');
-Route::post('/category/change-status','CategoryController@changeStatus');
+Route::post('/article-category/create','ArticleCategoryController@create');
+Route::post('/article-category/edit','ArticleCategoryController@edit');
+Route::post('/article-category/change-status','ArticleCategoryController@changeStatus');
 
-// 资讯分类模块
+Route::get('/article-category/category-options','ArticleCategoryController@categoryOptions');
 
-Route::get('/news-category/index','NewsCategoryController@index');
+// 文章管理
 
-Route::post('/news-category/create','NewsCategoryController@create');
-Route::post('/news-category/edit','NewsCategoryController@edit');
-Route::post('/news-category/change-status','NewsCategoryController@changeStatus');
+Route::get('/article/index','ArticleController@index');
 
-// 应用管理
-
-Route::get('/apps/index','AppController@index');
-
-Route::post('/apps/create','AppController@create');
-Route::post('/apps/edit','AppController@edit');
-Route::post('/apps/change-status','AppController@changeStatus');
-Route::post('/apps/set-recommen','AppController@setRecommen');
-
-// banner 管理
-
-Route::get('/banner/index','BannerController@index');
-
-Route::post('/banner/create','BannerController@create');
-Route::post('/banner/edit','BannerController@edit');
-Route::post('/banner/change-status','BannerController@changeStatus');
-
-// 应用管理
-
-Route::get('/news/index','NewsController@index');
-
-Route::post('/news/create','NewsController@create');
-Route::post('/news/edit','NewsController@edit');
-Route::post('/news/change-status','NewsController@changeStatus');
-Route::post('/news/set-recommen','NewsController@setRecommen');
+Route::post('/article/create','ArticleController@create');
+Route::post('/article/edit','ArticleController@edit');
+Route::post('/article/change-status','ArticleController@changeStatus');
+Route::post('/article/set-recommen','ArticleController@setRecommen');

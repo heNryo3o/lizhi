@@ -31,7 +31,7 @@ class Seo extends PublicModel
 
         }
 
-        $news = News::where(['status' => 1])->get()->toArray();
+        $news = Article::where(['status' => 1])->get()->toArray();
 
         foreach ($news as $k => $v) {
 
@@ -47,7 +47,7 @@ class Seo extends PublicModel
 
         }
 
-        $news_categories = NewsCategory::where(['status' => 1])->get()->toArray();
+        $news_categories = ArticleCategory::where(['status' => 1])->get()->toArray();
 
         foreach ($news_categories as $k => $v) {
 
@@ -84,7 +84,7 @@ class Seo extends PublicModel
 
         }
 
-        $news = News::where(['status' => 1])->get()->toArray();
+        $news = Article::where(['status' => 1])->get()->toArray();
 
         foreach ($news as $k => $v) {
 
@@ -100,7 +100,7 @@ class Seo extends PublicModel
 
         }
 
-        $news_categories = NewsCategory::where(['status' => 1])->get()->toArray();
+        $news_categories = ArticleCategory::where(['status' => 1])->get()->toArray();
 
         foreach ($news_categories as $k => $v) {
 
@@ -144,21 +144,21 @@ class Seo extends PublicModel
         set_time_limit(0);
         ini_set('memory_limit', '1024M');
 
-        $news = News::where(['status' => 2])->orderBy('id','asc')->first();
+        $news = Article::where(['status' => 2])->orderBy('id','asc')->first();
 
         if (empty($news)) {
             return;
         }
 
-        News::where(['status'=>1,'content'=>''])->delete();
+        Article::where(['status'=>1,'content'=>''])->delete();
 
-        $count = News::where(['url'=>$news['url']])->count();
+        $count = Article::where(['url'=>$news['url']])->count();
 
         if($count > 1){
-            News::where(['url'=>$news['url']])->where('id','!=',$news['url'])->delete();
+            Article::where(['url'=>$news['url']])->where('id','!=',$news['url'])->delete();
         }
 
-        News::find($news['id'])->update(['status'=>1]);
+        Article::find($news['id'])->update(['status'=>1]);
 
         $data = QueryList::get($news['url'])->rules([
             'title' => array('h1', 'text'),
@@ -195,7 +195,7 @@ class Seo extends PublicModel
 
         if ($title != '') {
 
-            News::find($news['id'])->update([
+            Article::find($news['id'])->update([
                 'name' => $title,
                 'content' => $content,
                 'thumb' => 'http://bian-cheng-me.oss-cn-hongkong.aliyuncs.com/public/2019/11/09/jwnmtwADAU5WZeE5AgaGnciRAGr8G6qkpTkh52tc.png',
@@ -209,7 +209,7 @@ class Seo extends PublicModel
 
         }else{
 
-            News::find($news['id'])->delete();
+            Article::find($news['id'])->delete();
 
         }
 
