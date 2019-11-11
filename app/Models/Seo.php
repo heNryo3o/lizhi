@@ -162,11 +162,11 @@ class Seo extends PublicModel
 
         $data = QueryList::get($news['url'])->rules([
             'title' => array('h1', 'text'),
-            'content' => array('.article-content>p', 'text'),
+            'content' => array('.PostContent>p', 'text'),
             "kw" => array("meta[name=keywords]", "content"),
             "desc" => array("meta[name=desciption]", "content"),
         ])->queryData();
-
+dd($data);
         $content = $title = $kw = $desc = $origin_content = $current_content = '';
 
         foreach ($data as $vk => $vv) {
@@ -198,10 +198,9 @@ class Seo extends PublicModel
             Article::find($news['id'])->update([
                 'name' => $title,
                 'content' => $content,
-                'thumb' => 'http://bian-cheng-me.oss-cn-hongkong.aliyuncs.com/public/2019/11/09/jwnmtwADAU5WZeE5AgaGnciRAGr8G6qkpTkh52tc.png',
                 'category_1' => 4,
                 'seo_title' => $title,
-                'seo_keywords' => $kw ? $kw : '赚钱',
+                'seo_keywords' => $kw ? $kw : '励志语录',
                 'seo_describe' => $desc ? $desc : mb_substr($origin_content, 0, 80),
                 'status' => 1,
                 'slug' => implode('-', pinyin($title))
