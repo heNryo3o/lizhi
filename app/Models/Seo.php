@@ -17,41 +17,21 @@ class Seo extends PublicModel
 
         $time = date('Y-m-d H:i:s', time());
 
-        $sitemap->add("https://www.5aizhuanqian.com", $time, 1.0, 'daily');
+        $sitemap->add(route('/'), $time, 1.0, 'daily');
 
-        $sitemap->add("https://www.5aizhuanqian.com/app.html", $time, 0.9, 'daily');
+        $articles = Article::where(['status' => 1])->get()->toArray();
 
-        $sitemap->add("https://www.5aizhuanqian.com/news.html", $time, 0.9, 'daily');
+        foreach ($articles as $k => $v) {
 
-        $apps = Apps::where(['status' => 1])->get()->toArray();
-
-        foreach ($apps as $k => $v) {
-
-            $sitemap->add(route('app.info', ['slug' => $v['slug']]), $time, 0.7, 'daily');
+            $sitemap->add(route('article.info', ['slug' => $v['slug']]), $time, 0.8, 'daily');
 
         }
 
-        $news = Article::where(['status' => 1])->get()->toArray();
-
-        foreach ($news as $k => $v) {
-
-            $sitemap->add(route('news.info', ['slug' => $v['slug']]), $time, 0.7, 'daily');
-
-        }
-
-        $categories = Category::where(['status' => 1])->get()->toArray();
+        $categories = ArticleCategory::where(['status' => 1])->get()->toArray();
 
         foreach ($categories as $k => $v) {
 
-            $sitemap->add(route('app.list', ['slug' => $v['slug']]), $time, 0.8, 'daily');
-
-        }
-
-        $news_categories = ArticleCategory::where(['status' => 1])->get()->toArray();
-
-        foreach ($news_categories as $k => $v) {
-
-            $sitemap->add(route('news.list', ['slug' => $v['slug']]), $time, 0.8, 'daily');
+            $sitemap->add(route('article.list', ['slug' => $v['slug']]), $time, 0.9, 'daily');
 
         }
 
@@ -70,45 +50,25 @@ class Seo extends PublicModel
     {
         $urls = array();
 
-        $urls[] = "https://www.5aizhuanqian.com";
+        $urls[] = route('/');
 
-        $urls[] = "https://www.5aizhuanqian.com/app.html";
-
-        $urls[] = "https://www.5aizhuanqian.com/news.html";
-
-        $apps = Apps::where(['status' => 1])->get()->toArray();
-
-        foreach ($apps as $k => $v) {
-
-            $urls[] = route('app.info', ['slug' => $v['slug']]);
-
-        }
-
-        $news = Article::where(['status' => 1])->get()->toArray();
-
-        foreach ($news as $k => $v) {
-
-            $urls[] = route('news.info', ['slug' => $v['slug']]);
-
-        }
-
-        $categories = Category::where(['status' => 1])->get()->toArray();
+        $categories = ArticleCategory::where(['status' => 1])->get()->toArray();
 
         foreach ($categories as $k => $v) {
 
-            $urls[] = route('app.list', ['slug' => $v['slug']]);
+            $urls[] = route('article.list', ['slug' => $v['slug']]);
 
         }
 
-        $news_categories = ArticleCategory::where(['status' => 1])->get()->toArray();
+        $articles = Article::where(['status' => 1])->get()->toArray();
 
-        foreach ($news_categories as $k => $v) {
+        foreach ($articles as $k => $v) {
 
-            $urls[] = route('news.list', ['slug' => $v['slug']]);
+            $urls[] = route('article.info', ['slug' => $v['slug']]);
 
         }
 
-        $api = 'http://data.zz.baidu.com/urls?site=https://www.5aizhuanqian.com&token=ublJMuNlBVDcTdmH';
+        $api = 'http://data.zz.baidu.com/urls?site=https://www.lzyl365.com&token=ublJMuNlBVDcTdmH';
         $ch = curl_init();
         $options = array(
             CURLOPT_URL => $api,
@@ -144,7 +104,7 @@ class Seo extends PublicModel
         set_time_limit(0);
         ini_set('memory_limit', '1024M');
 
-        $news = Article::where(['status' => 2,'category_1'=>3])->orderBy('id','asc')->first();
+        $news = Article::where(['status' => 2,'category_1'=>5])->orderBy('id','asc')->first();
 
         if (empty($news)) {
             return;
