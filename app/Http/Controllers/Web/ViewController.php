@@ -85,7 +85,7 @@ class ViewController extends Controller
 
         foreach ($category as $k => &$v) {
 
-            $articles = Article::where(['category_1' => $v['id'], 'status' => 1])->remember(100800)->limit(8)->get()->toArray();
+            $articles = Article::where(['category_1' => $v['id'], 'status' => 1])->remember(100800)->orderBy('id','desc')->limit(8)->get()->toArray();
 
             $v['articles'] = $articles;
 
@@ -132,7 +132,7 @@ class ViewController extends Controller
 
         $id = $article['id'] > 10 ? $article['id'] : 10;
 
-        $recommen = Article::where('id','<',$id)->remember(100800)->limit(6)->get()->toArray();
+        $recommen = Article::where('id','<',$id)->remember(100800)->orderBy('id','desc')->limit(6)->get()->toArray();
 
         return view(
             'article-info',[
