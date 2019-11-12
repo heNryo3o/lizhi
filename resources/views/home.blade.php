@@ -16,7 +16,7 @@
                 </div>
                 <div class="mdui-card-content" style="padding: 0 14px 10px 14px;">
                     @foreach($v['articles'] as $vk => $vv)
-                    <p>
+                    <p class="mdui-text-truncate">
                         <a href="{{ route('article.info',['slug'=>$vv['slug']]) }}">
                             <button class="mdui-btn mdui-ripple">
                                 {{ $vv['name'] }}
