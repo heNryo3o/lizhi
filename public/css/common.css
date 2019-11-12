@@ -128,3 +128,7 @@ footer .mdui-container{
     border-top-right-radius: .2rem;
     border-bottom-right-radius: .2rem
 }
+
+p .mdui-btn {
+    font-size: 15px;
+}
