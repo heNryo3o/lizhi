@@ -132,7 +132,7 @@ class ViewController extends Controller
 
         $id = $article['id'] > 10 ? $article['id'] : 10;
 
-        $recommen = Article::where('id','<',$id)->remember(100800)->orderBy('id','desc')->limit(6)->get()->toArray();
+        $recommen = Article::where('id','<',$id)->where(['status'=>1])->remember(100800)->orderBy('id','desc')->limit(6)->get()->toArray();
 
         return view(
             'article-info',[
