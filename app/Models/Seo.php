@@ -80,11 +80,12 @@ class Seo extends PublicModel
 
         curl_setopt_array($ch, $options);
 
-        $result = curl_exec($ch);
-        echo $result;
-        $api = 'http://data.zhanzhang.sm.cn/push?site=www.5aizhuanqian.com&user_name=18661139072@163.com&resource_name=mip_add&token=TI_ec3297e4afcc36ecb6761b6dd87e3bf1';
+        $result1 = curl_exec($ch);
+
+
+        $api = 'http://data.zhanzhang.sm.cn/push?site=www.lzyl365.com&user_name=18661139072@163.com&resource_name=mip_add&token=TI_5732fb95fbb250608a99ae9cc8b9bb6a';
         $ch = curl_init();
-        $options = array(
+        $options =  array(
             CURLOPT_URL => $api,
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
@@ -92,8 +93,8 @@ class Seo extends PublicModel
             CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
         );
         curl_setopt_array($ch, $options);
-        $result = curl_exec($ch);
-        echo $result;
+        $result2 = curl_exec($ch);
+        echo $result1.' '.$result2;
         return;
 
     }
