@@ -34,7 +34,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?a6598cbc9db6d0a3768cc35066e6ece1";
+            hm.src = "https://hm.baidu.com/hm.js?4799e9ec30e2ecbbb37cf67458be1079";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
