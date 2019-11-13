@@ -68,7 +68,7 @@ class Seo extends PublicModel
 
         }
 
-        $api = 'http://data.zz.baidu.com/urls?site=www.lzyl365.com&token=MgYFX4B8Qc4pNZLF';
+        $api = 'http://data.zz.baidu.com/urls?site=https://www.lzyl365.com&token=jcBb7jfeqB6Rfw9I';
         $ch = curl_init();
         $options = array(
             CURLOPT_URL => $api,
