@@ -105,7 +105,7 @@ class Seo extends PublicModel
         set_time_limit(0);
         ini_set('memory_limit', '1024M');
 
-        $news = Article::where(['status' => 2,'category_1'=>5])->orderBy('id','asc')->first();
+        $news = Article::where(['status' => 2])->orderBy('id','asc')->first();
 
         if (empty($news)) {
             return;
