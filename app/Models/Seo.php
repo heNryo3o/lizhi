@@ -19,7 +19,7 @@ class Seo extends PublicModel
 
         $sitemap->add(route('/'), $time, 1.0, 'daily');
 
-        $articles = Article::where(['status' => 1])->get()->toArray();
+        $articles = Article::where(['status' => 1])->orderBy('id','desc')->get()->toArray();
 
         foreach ($articles as $k => $v) {
 
