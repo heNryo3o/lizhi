@@ -60,7 +60,7 @@ class Seo extends PublicModel
 
         }
 
-        $articles = Article::where(['status' => 1])->get()->toArray();
+        $articles = Article::where(['status' => 1])->orderBy('id','desc')->limit(1800)->get()->toArray();
 
         foreach ($articles as $k => $v) {
 
@@ -82,19 +82,21 @@ class Seo extends PublicModel
 
         $result1 = curl_exec($ch);
 
+        echo $result1;
 
-        $api = 'http://data.zhanzhang.sm.cn/push?site=www.lzyl365.com&user_name=18661139072@163.com&resource_name=mip_add&token=TI_5732fb95fbb250608a99ae9cc8b9bb6a';
-        $ch = curl_init();
-        $options =  array(
-            CURLOPT_URL => $api,
-            CURLOPT_POST => true,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS => implode("\n", $urls),
-            CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
-        );
-        curl_setopt_array($ch, $options);
-        $result2 = curl_exec($ch);
-        echo $result1.' '.$result2;
+
+//        $api = 'http://data.zhanzhang.sm.cn/push?site=www.lzyl365.com&user_name=18661139072@163.com&resource_name=mip_add&token=TI_5732fb95fbb250608a99ae9cc8b9bb6a';
+//        $ch = curl_init();
+//        $options =  array(
+//            CURLOPT_URL => $api,
+//            CURLOPT_POST => true,
+//            CURLOPT_RETURNTRANSFER => true,
+//            CURLOPT_POSTFIELDS => implode("\n", $urls),
+//            CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
+//        );
+//        curl_setopt_array($ch, $options);
+//        $result2 = curl_exec($ch);
+//        echo $result1.' '.$result2;
         return;
 
     }

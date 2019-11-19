@@ -164,9 +164,9 @@ class ViewController extends Controller
 
         $seo = new Seo();
 
-        $seo->sitemap();
+//        $seo->sitemap();
 
-//        $seo->pushUrl();
+        $seo->pushUrl();
 
         return;
 
