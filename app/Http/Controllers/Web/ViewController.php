@@ -147,7 +147,10 @@ class ViewController extends Controller
                 'article' => $article,
                 'category' => $category,
                 'current_category' => $current->slug,
-                'recommen' => $recommen
+                'recommen' => $recommen,
+                'title' => $article['seo_title'],
+                'keywords' => $article['seo_keywords'],
+                'desc' => $article['seo_desc'],
             ]
         );
 
