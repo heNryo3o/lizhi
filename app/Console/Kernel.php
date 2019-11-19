@@ -27,9 +27,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('auto_sitemap')->daily();
-        $schedule->command('push_url')->daily();
-        $schedule->command('get_news')->everyFiveMinutes();
+        $schedule->command('auto_sitemap')->dailyAt('03:00');
+        $schedule->command('push_url')->dailyAt('02:00');
+        $schedule->command('get_news')->everyFiveMinutes()->between('10:00','16:00');
     }
 
     /**
