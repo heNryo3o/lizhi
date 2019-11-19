@@ -153,7 +153,7 @@ class ViewController extends Controller
                 'recommen' => $recommen,
                 'title' => $article['seo_title'],
                 'keywords' => $article['seo_keywords'],
-                'desc' => $article['seo_desc'],
+                'desc' => $article['seo_describe'],
             ]
         );
 
