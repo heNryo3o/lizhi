@@ -19,6 +19,8 @@ class PublicModel extends Model
     public function fakeContent($text)
     {
 
+        return $text;
+
         if($text){
 
             $en = $this->translate($text, 'zh-CHS', 'en');

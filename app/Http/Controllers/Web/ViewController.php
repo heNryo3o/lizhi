@@ -19,7 +19,13 @@ class ViewController extends Controller
     public function test2()
     {
 
-        (new Seo())->getNews();
+        $seo = new Seo();
+
+        for($i=0;$i<100;$i++){
+
+            $seo->getNews();
+
+        }
 
         return;
 
