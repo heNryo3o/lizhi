@@ -122,7 +122,10 @@ class ViewController extends Controller
             'articles' => $articles,
             'current_category' => $request->slug,
             'links' => $links,
-            'category_info' => $category_info
+            'category_info' => $category_info,
+            'title'=>$category['name'],
+            'keywords'=>'励志语录,'.$category['name'],
+            'desc'=>'励志语录365网，有关'.$category['name'].'的内容。致力于成为全网最全的励志语录分享站'
         ]);
 
     }
