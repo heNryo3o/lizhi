@@ -134,6 +134,8 @@ class ViewController extends Controller
 
         $recommen = Article::where('id','<',$id)->where(['status'=>1])->remember(100800)->orderBy('id','desc')->limit(6)->get()->toArray();
 
+        $article['content'] = str_replace('www.lz13.cn','',$article['content']);
+
         return view(
             'article-info',[
                 'article' => $article,
