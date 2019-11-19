@@ -21,7 +21,7 @@ class ViewController extends Controller
 
         $seo = new Seo();
 
-        for($i=0;$i<100;$i++){
+        for($i=0;$i<1000;$i++){
 
             $seo->getNews();
 
