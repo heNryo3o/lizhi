@@ -173,7 +173,7 @@ class Seo extends PublicModel
 //                    $origin_content .= $current_content;
 //                }
 
-                $content = $vv['content'];
+                $content .= $vv['content'];
 
             }
 
