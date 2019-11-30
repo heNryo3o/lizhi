@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('auto_sitemap')->dailyAt('03:00');
         $schedule->command('push_url')->dailyAt('02:00');
-        $schedule->command('get_news')->everyFifteenMinutes()->between('18:00','20:00');
+        $schedule->command('get_news')->everyFifteenMinutes()->between('20:00','22:00');
     }
 
     /**
