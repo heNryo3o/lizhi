@@ -115,7 +115,7 @@ class ViewController extends Controller
 
         $links = $articles->links();
 
-        $category = ArticleCategory::where(['status' => 1, 'level' => 1])->remember(100800)->get()->toArray();
+        $category = ArticleCategory::where(['status' => 1, 'level' => 1])->remember(100800)->first()->toArray();
 
         return view('article', [
             'category' => $category,
