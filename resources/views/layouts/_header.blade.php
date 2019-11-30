@@ -11,12 +11,12 @@
     <div class="mc-drawer mdui-drawer">
         <div class="mdui-list">
             <a class="mdui-list-item mdui-ripple {{ if_route('/') ? 'mdui-list-item-active mdui-text-color-theme' : '' }} " href="{{ route('/') }}">
-                <div class="mdui-list-item-content">首页</div>
+                <div class="mdui-list-item-content"><h3>首页</h3></div>
             </a>
             @foreach($category as $k => $v)
             <a class="mdui-list-item mdui-ripple {{ $v['slug'] == $current_category ? 'mdui-list-item-active mdui-text-color-theme' : '' }}" href="{{ route('article.list',['slug'=>$v['slug']]) }}">
                 <div class="mdui-list-item-content">
-                    {{ $v['name'] }}
+                    <h3>{{ $v['name'] }}</h3>
                 </div>
             </a>
             @endforeach
