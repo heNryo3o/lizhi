@@ -146,8 +146,8 @@ p .mdui-btn {
 }
 
 .card-btn {
-    font-size: 22px;
-    color: #5D4037;
+    font-size: 22px !important;
+    color: #5D4037 !important;
 }
 
 .card-content-pd {
