@@ -151,7 +151,7 @@ p .mdui-btn {
 }
 
 .card-content-pd {
-    padding: 0 14px 10px 14px;
+    padding: 0 14px 10px 14px !important;
 }
 
 .color-ff {
