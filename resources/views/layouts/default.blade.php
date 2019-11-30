@@ -58,6 +58,5 @@
 
 </script>
 </body>
-{{--<script type="text/javascript" src="{{asset('plugins/jquery/jquery.js')}}" ></script>--}}
 @yield('js')
 </html>
