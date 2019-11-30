@@ -1,5 +1,5 @@
 <footer>
-    <div class="mdui-container" style="text-align: center;">
+    <div class="mdui-container text-center" style="text-align: center;">
         <div class="footer-copyright">Copyright © 2019 <a href="{{ route('/') }}">励志语录365网</a> All rights reserved.</div>
         <div class="footer-copyright">友情链接：
             <a href="https://www.5aizhuanqian.com" target="_blank" class="mdui-m-r-1">我爱赚钱网</a>

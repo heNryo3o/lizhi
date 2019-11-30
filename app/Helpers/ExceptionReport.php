@@ -53,9 +53,7 @@ class ExceptionReport
         AuthorizationException::class => ['没有此权限',402],
         ValidationException::class => [],
         UnauthorizedHttpException::class=>['请登录',403],
-        TokenInvalidException::class=>['token不正确',5001],
-        NotFoundHttpException::class=>['请求路径不正确',404],
-        MethodNotAllowedHttpException::class=>['访问方式不正确',404],
+        TokenInvalidException::class=>['token不正确',5001]
     ];
 
     public function register($className,callable $callback){

@@ -15,22 +15,30 @@ footer {
 
 @media (min-width: 1024px)
 footer {
-    padding: 32px 0;
+    padding:
+
+32px
+
+0;
 }
 
 @media (min-width: 600px)
 footer {
-    padding: 24px 0;
+    padding:
+
+24px
+
+0;
 }
 
-footer .mdui-container{
+footer .mdui-container {
     padding-top: 24px;
     padding-bottom: 24px;
-    font-family: Roboto Mono,Roboto,Noto,Helvetica,Arial,sans-serif;
+    font-family: Roboto Mono, Roboto, Noto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
 }
 
-.pagination-container{
+.pagination-container {
     margin-top: 10px;
     text-align: center;
 }
@@ -131,4 +139,25 @@ footer .mdui-container{
 
 p .mdui-btn {
     font-size: 15px;
+}
+
+.pd-1016 {
+    padding: 10px 16px;
+}
+
+.card-btn {
+    font-size: 22px;
+    color: #5D4037;
+}
+
+.card-content-pd {
+    padding: 0 14px 10px 14px;
+}
+
+.color-ff {
+    color: #FF5722;
+}
+
+.text-center {
+    text-align: center;
 }
