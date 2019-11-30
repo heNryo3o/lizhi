@@ -4,7 +4,7 @@
             <button mdui-drawer="{target: '.mc-drawer', swipe: true}"
                     class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"><i class="mdui-icon material-icons">menu</i>
             </button>
-            <a class="mdui-typo-headline" href="{{ route('/') }}"><h1>励志语录365</h1></a>
+            <a class="mdui-typo-headline" href="{{ route('/') }}"><h1 class="head-title">励志语录365</h1></a>
             <div class="mdui-toolbar-spacer"></div>
         </div>
     </div>

@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
-    'version' => '10',
+    'version' => '11',
 
     'youdao_key' => env('YOUDAO_KEY'),
 
