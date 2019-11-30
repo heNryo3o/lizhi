@@ -115,7 +115,7 @@ class ViewController extends Controller
 
         $links = $articles->links();
 
-        $category = ArticleCategory::where(['status' => 1, 'level' => 1])->remember(100800)->first()->toArray();
+        $category = ArticleCategory::where(['status' => 1, 'level' => 1])->remember(100800)->get()->toArray();
 
         return view('article', [
             'category' => $category,
@@ -123,9 +123,9 @@ class ViewController extends Controller
             'current_category' => $request->slug,
             'links' => $links,
             'category_info' => $category_info,
-            'title'=>$category['name'],
-            'keywords'=>'励志语录,'.$category['name'],
-            'desc'=>'励志语录365网，有关'.$category['name'].'的内容。致力于成为全网最全的励志语录分享站'
+            'title'=>$category_info['name'],
+            'keywords'=>'励志语录,'.$category_info['name'],
+            'desc'=>'励志语录365网，有关'.$category_info['name'].'的内容。致力于成为全网最全的励志语录分享站'
         ]);
 
     }
