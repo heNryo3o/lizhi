@@ -165,3 +165,7 @@ p .mdui-btn {
 .head-title {
     font-size: 1.1em;
 }
+
+.mdui-list-item-content h3{
+    font-size: 1.0em;
+}
