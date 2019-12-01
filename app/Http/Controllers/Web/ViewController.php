@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\Seo;
+use App\Models\Words;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use QL\QueryList;
@@ -167,6 +168,25 @@ class ViewController extends Controller
 //        $seo->sitemap();
 
         $seo->pushUrl();
+
+        return;
+
+    }
+
+    public function arrangeWords()
+    {
+
+        $list = Article::where(['words'=>''])->get()->toArray();
+
+        $words = new Words();
+
+        foreach ($list as $k => $v){
+
+            $three = $words->getThree();
+
+            Article::find($v['id'])->update(['words'=>$three]);
+
+        }
 
         return;
 

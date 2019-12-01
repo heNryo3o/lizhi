@@ -19,7 +19,12 @@ class Article extends PublicModel
         'is_recommen',
         'status',
         'slug',
-        'url'
+        'url',
+        'words'
+    ];
+
+    protected $casts = [
+        'words' => 'json'
     ];
 
     protected $rememberCacheTag = 'Article';
