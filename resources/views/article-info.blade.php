@@ -10,6 +10,9 @@
                 </div>
                 <div class="mdui-card-content">
                     {!! $article['content'] !!}
+                    @foreach($info['words'] as $k => $v)
+                        <h5>{{ $v }}</h5>
+                    @endforeach
                 </div>
             </div>
         </div>
