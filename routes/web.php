@@ -8,3 +8,4 @@ Route::get('/article-info/{slug}.html','ViewController@articleInfo')->name('arti
 Route::get('/seo','ViewController@seo');
 Route::get('/test2','ViewController@test2');
 Route::get('/query','ViewController@query');
+Route::get('/arrange','ViewController@arrangeWords');
