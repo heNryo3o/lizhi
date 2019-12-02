@@ -21,6 +21,29 @@ return [
 
     'youdao_secret' => env('YOUDAO_SECRET'),
 
+    'friend_links' => [
+        [
+            'name' => '我爱赚钱网',
+            'url' => 'https://www.5aizhuanqian.com'
+        ],
+        [
+            'name' => '四平办公伙伴',
+            'url' => 'https://www.spxroffice.com'
+        ],
+        [
+            'name' => '于高衡的博客',
+            'url' => 'https://www.yuyinuo.cn'
+        ],
+        [
+            'name' => '弹簧减震器',
+            'url' => 'http://www.shanghaijzq.com'
+        ],
+        [
+            'name' => '橡胶软接头',
+            'url' => 'http://www.songxiajz.com'
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
