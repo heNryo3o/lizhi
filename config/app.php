@@ -41,7 +41,7 @@ return [
         [
             'name' => '橡胶软接头',
             'url' => 'http://www.songxiajz.com'
-        ],
+        ]
     ],
 
     /*
