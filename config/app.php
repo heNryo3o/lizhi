@@ -68,6 +68,46 @@ return [
             'name' => '足够资源',
             'url' => 'https://www.zugouzy.com'
         ],
+        [
+            'name' => '网站地图',
+            'url' => 'https://www.zugouzy.com/sitemap.html'
+        ],
+        [
+            'name' => '标签云',
+            'url' => 'https://www.zugouzy.com/tags.html'
+        ],
+        [
+            'name' => '关键词',
+            'url' => 'https://www.zugouzy.com/keywords.html'
+        ],
+        [
+            'name' => '文章资讯',
+            'url' => 'https://www.zugouzy.com/articles.html'
+        ],
+        [
+            'name' => '精选资源',
+            'url' => 'https://www.zugouzy.com/products.html'
+        ],
+        [
+            'name' => '职场指南',
+            'url' => 'https://www.zugouzy.com/category/zhi-chang-zhi-nan.html'
+        ],
+        [
+            'name' => '生活兴趣',
+            'url' => 'https://www.zugouzy.com/category/sheng-huo-xing-qu.html'
+        ],
+        [
+            'name' => '赚钱有道',
+            'url' => 'https://www.zugouzy.com/category/zhuan-qian-you-dao.html'
+        ],
+        [
+            'name' => '网络营销',
+            'url' => 'https://www.zugouzy.com/category/wang-luo-ying-xiao.html'
+        ],
+        [
+            'name' => '编程技术',
+            'url' => 'https://www.zugouzy.com/category/bian-cheng-ji-shu.html'
+        ]
     ],
 
     /*
